@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 import { Menu, X, User, MessageCircle, ChevronRight, ChevronDown, ArrowRight } from 'lucide-react';
 
 const destinations = [
@@ -108,10 +109,12 @@ export default function Home() {
               <button className="px-6 py-2 text-sm font-medium text-white bg-blue-500 rounded-full hover:bg-blue-600 transition-colors border-2 border-blue-600">
                 OPTIONS
               </button>
-              <button className="flex items-center px-4 py-2 text-sm font-medium text-white bg-orange-400 rounded-full hover:bg-orange-500 transition-colors">
-                <User size={16} className="mr-2" />
-                Profile
-              </button>
+              <Link href="/login">
+                <button className="flex items-center px-4 py-2 text-sm font-medium text-white bg-orange-400 rounded-full hover:bg-orange-500 transition-colors">
+                  <User size={16} className="mr-2" />
+                  Profile
+                </button>
+              </Link>
             </div>
           </div>
         </div>

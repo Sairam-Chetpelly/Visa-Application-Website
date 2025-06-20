@@ -1,4 +1,7 @@
+'use client'
+
 import React, { useState } from 'react';
+import Image from 'next/image';
 import { Menu, X, User, MessageCircle, ChevronRight, ChevronDown, ArrowRight } from 'lucide-react';
 
 const destinations = [
@@ -75,7 +78,7 @@ const continents = [
   { name: 'Africa', count: 5, countries: ['South Africa', 'Egypt', 'Morocco', 'Kenya', 'Nigeria'] }
 ];
 
-function App() {
+export default function Home() {
   const [expandedContinent, setExpandedContinent] = useState<string | null>(null);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
@@ -193,9 +196,11 @@ function App() {
                   className="group bg-white rounded-2xl shadow-sm overflow-hidden hover:shadow-lg transition-all duration-300 relative"
                 >
                   <div className="relative overflow-hidden">
-                    <img
+                    <Image
                       src={destination.image}
                       alt={destination.name}
+                      width={400}
+                      height={200}
                       className="w-full h-48 object-cover"
                     />
                   </div>
@@ -284,5 +289,3 @@ function App() {
     </div>
   );
 }
-
-export default App;
